@@ -14,12 +14,15 @@ import { NotImplementedError } from '../extensions/index.js';
  * ]) => 3`
  *
  */
-export default function countCats(arr) {
-  throw new NotImplementedError('Not implemented');
-  let numOfCats = arr.reduce((catSum,box) => {
-    let cats = box.filter(item => item == '^^');
-    catSum += cats;
-  }, 0);
-  return numOfCats;
+export default function countCats(backyard) {
+  let cats = 0;
+  for (let i = 0; i < backyard.length; i++){
+    for (let j = 0; j < backyard[i].length; j++){
+      if(backyard[i][j] == "^^"){
+        cats += 1;
+      }
+    }
+  }
+  return cats;
 }
 
